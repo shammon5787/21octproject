@@ -8,7 +8,7 @@ const FoodCard = ({id, name, price, desc, image, rating}) => {
             <div className='p-3'>
                 <img className='w-[200px] h-[100px] cursor-pointer rounded-md hover:scale-110 transition-all duration-500 ' src={image} alt="" />
             </div>
-            <div className='p-3 bg-green-900 rounded-b-md'>
+            <div className='bg-green-900 rounded-b-md w-full p-3'>
                 <div className='flex items-center justify-between font-semibold'>
                     <h1>{name}</h1>
                     <h1>$ {price}</h1>
