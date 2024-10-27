@@ -3,7 +3,7 @@ import img from '../Food/3.avif'
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { useDispatch } from 'react-redux';
-import { removeCard } from '../Store/CardSlice';
+import { decrementItem, incrementItem, removeCard } from '../Store/CardSlice';
 
 const CardItem = ({id, name, price, qty, image}) => {
   const dispatch = useDispatch()
@@ -17,9 +17,9 @@ const CardItem = ({id, name, price, qty, image}) => {
                 <h1>$: {price}</h1>
             </div>
             <div className='flex gap-4 items-center absolute right-6 mt-8'>
-                <FaMinus className='cursor-pointer font-semibold text-xl bg-zinc-800 rounded-full hover:bg-white hover:text-black transition-all duration-500' />
+                <FaMinus onClick={()=>qty > 1 ? dispatch(decrementItem({id})) : qty = 1} className='cursor-pointer font-semibold text-xl bg-zinc-800 rounded-full hover:bg-white hover:text-black transition-all duration-500' />
                 <span>{qty}</span>
-                <FaPlus className='cursor-pointer font-semibold text-xl bg-zinc-800 rounded-full hover:bg-white hover:text-black transition-all duration-500' />
+                <FaPlus onClick={()=>dispatch(incrementItem({id}))} className='cursor-pointer font-semibold text-xl bg-zinc-800 rounded-full hover:bg-white hover:text-black transition-all duration-500' />
             </div>
         </div>
     </div>

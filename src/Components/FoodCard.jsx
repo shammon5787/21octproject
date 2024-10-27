@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import img from '../Food/2.avif'
 import { FaStar } from "react-icons/fa";
 import { useDispatch } from 'react-redux';
@@ -6,8 +6,9 @@ import { addCard } from '../Store/CardSlice';
 
 const FoodCard = ({id, name, price, desc, image, rating}) => {
     const dispatch = useDispatch()
+    // const [activeCard, setactiveCard] = useState(false)
     return (
-        <div className='bg-blue-950 w-full lg:w-[23vw] flex flex-col items-center rounded-md'>
+        <div className='bg-blue-950 w-full lg:w-[23vw] flex flex-col items-center rounded-md '>
             <div className='p-3'>
                 <img className='w-[200px] h-[100px] cursor-pointer rounded-md hover:scale-110 transition-all duration-500 ' src={image} alt="" />
             </div>
