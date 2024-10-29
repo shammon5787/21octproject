@@ -1,29 +1,25 @@
-import React, { useState } from 'react'
-import img from '../Food/2.avif'
-import { FaStar } from "react-icons/fa";
-import { useDispatch } from 'react-redux';
-import { addCard } from '../Store/CardSlice';
+import React from 'react'
+import img from '../Food/4.avif'
+import { MdOutlineStarPurple500 } from "react-icons/md";
 
-const FoodCard = ({id, name, price, desc, image, rating}) => {
-    const dispatch = useDispatch()
-    // const [activeCard, setactiveCard] = useState(false)
+const FoodCard = () => {
     return (
-        <div className='bg-blue-950 w-full lg:w-[23vw] flex flex-col items-center rounded-md '>
-            <div className='p-3'>
-                <img className='w-[200px] h-[100px] cursor-pointer rounded-md hover:scale-110 transition-all duration-500 ' src={image} alt="" />
+        <div className='bg-gradient-to-t from-blue-600 to-blue-950 w-full lg:w-[22vw] rounded-md'>
+            <div className='p-3 flex flex-col items-center'>
+                <img className='rounded-md w-[200px] h-[100px] cursor-grab hover:scale-110 transition-all duration-500' src={img} alt="" />
             </div>
-            <div className='bg-green-900 rounded-b-md w-full p-3'>
+            <div className='bg-green-950 rounded-b-md p-3'>
                 <div className='flex items-center justify-between font-semibold'>
-                    <h1>{name}</h1>
-                    <h1>$ {price}</h1>
+                    <h1>pizza</h1>
+                    <h1>$:45</h1>
                 </div>
-                <p>{desc}.</p>
-                <div  className='flex items-center justify-between'>
-                    <span className='flex items-center gap-2'>
-                        <FaStar className='text-yellow-400' />
-                        <h1 className='font-semibold'> {rating} </h1>
+                <p>Lorem consectetur adipisicing elit. Quibusdam, assumenda!</p>
+                <div className='flex items-center justify-between'>
+                    <span className='flex items-center gap-1.5'>
+                        <MdOutlineStarPurple500 className='text-yellow-400 text-3xl' />
+                        <h1>4</h1>
                     </span>
-                    <button onClick={()=>dispatch(addCard({id, name, image, price, qty : 1}))} className='bg-gray-900 px-1.5 text-xl rounded-md font-semibold hover:bg-zinc-400 hover:text-black transition-all duration-500 my-2'>Add To Card</button>
+                    <button className='bg-blue-900 px-2 py-0.5 rounded-md hover:bg-green-700 font-semibold'>Add To Card</button>
                 </div>
             </div>
         </div>
