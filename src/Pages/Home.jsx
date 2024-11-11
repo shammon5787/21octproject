@@ -1,14 +1,14 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import CategoryMenu from '../Components/CategoryMenu'
-import FoodItem from '../Components/FoodItem'
+import Navbar from '../Company/Navbar'
+import CategoryMenu from '../Company/CategoryMenu'
+import FoodItem from '../Company/FoodItem'
 
 const Home = () => {
   return (
-    <div className='p-6'>
+    <div className='m-6'>
         <Navbar />
         <CategoryMenu />
-        <FoodItem />
+        <FoodItem/>
     </div>
   )
 }
