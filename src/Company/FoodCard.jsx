@@ -7,8 +7,8 @@ import { addCard } from '../Store/CardSlice';
 const FoodCard = ({id, name, price, image, desc, rating}) => {
     const dispatch = useDispatch()
   return (
-    <div className='bg-zinc-700 rounded-md w-full lg:w-[22vw] hover:bg-white transition-all duration-500'>
-        <div className='p-3 flex flex-col items-center'>
+    <div className='bg-zinc-700 rounded-md w-full lg:w-[22vw]'>
+        <div className='p-3 flex flex-col items-center bg-zinc-600 hover:bg-white rounded-t-md transition-all duration-500'>
             <img className='w-[200px] h-[100px] rounded-md cursor-grab hover:scale-110 transition-all duration-500' src= {image} alt="" />
         </div>
         <div className='p-3 bg-zinc-800 rounded-b-md'>
@@ -22,7 +22,7 @@ const FoodCard = ({id, name, price, image, desc, rating}) => {
                     <MdOutlineStar className='text-yellow-400 text-3xl' />
                     <h1>{rating}</h1>
                 </span>
-                <button onClick={()=>dispatch(addCard({id, name, image, price, qty : 1}))} className='bg-blue-800 px-2 rounded-md hover:bg-white hover:text-black font-semibold transition-all duration-500 my-2'>Add To Card</button>
+                <button onClick={()=>dispatch(addCard({id, name, image, price, qty : 1}))} className='bg-black px-2 rounded-md hover:bg-white hover:text-black font-semibold transition-all duration-500 my-2'>Add To Card</button>
             </div>
         </div>
     </div>
